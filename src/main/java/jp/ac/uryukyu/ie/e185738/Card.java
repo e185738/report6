@@ -3,15 +3,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Card {
-    String[] suit;
-    int[] num;
-    String type;
+    private String[] suit;
+    private int[] num;
+    private String type;
+    private String cards;
+
     public Card() {
         this.suit = new String[]{"ハート", "クラブ", "スペード", "ダイヤ", "ジョーカー"};
         this.num = new int[54];
 
     }
-    public void Cardset() {
+    public ArrayList cardset() {
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 1; i <= 54; i++) {
             num[i - 1] = i - 1;
@@ -19,15 +21,11 @@ public class Card {
 
         for (int j = 1; j <= 54; j++) {
             this.type = suit[num[j - 1] / 13];
-            String cards = type + "の" + (num[j - 1] % 13 + 1);
+            this.cards = type + "の" + (num[j - 1] % 13 + 1);
             list.add(cards);
         }
-        System.out.println(list);
-        Collections.shuffle(list);
-        System.out.println(list);
-
+        return list;
     }
-
     }
 
 
