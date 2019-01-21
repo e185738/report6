@@ -15,10 +15,18 @@ public class Card {
     String type;
     String cards;
 
+    /**
+     * コンストラクタ。記号と数字を設定する。
+     */
     public Card() {
         this.suit = new String[]{"ハート", "クラブ", "スペード", "ダイヤ", "ジョーカー"};
         this.num = new int[54];
     }
+
+    /**
+     * ５４種類のカードを作るメソッド。
+     * @return list ５４種類のカード。
+     */
     public ArrayList cardset() {
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 1; i <= 54; i++) {
